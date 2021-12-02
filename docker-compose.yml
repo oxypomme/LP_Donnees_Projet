@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  mongo:
+    image: mongo
+    volumes:
+      - ./docker/db:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: ${DB_NAME}
+      MONGO_INITDB_USERNAME: ${DB_USER}
+      MONGO_INITDB_PASSWORD: ${DB_PASSWORD}
+  php:
+    build: .
+    depends_on:
+      - mongo
+    volumes:
+      - "./:/app"
+    ports:
+      - 8080:8080
+  mongo-express:
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongo
