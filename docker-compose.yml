@@ -4,6 +4,7 @@ services:
     image: mongo
     volumes:
       - ./docker/db:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
     environment:
       MONGO_INITDB_DATABASE: ${DB_NAME}
       MONGO_INITDB_USERNAME: ${DB_USER}
