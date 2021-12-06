@@ -1,0 +1,43 @@
+#map {
+	width: 100vw;
+	height: 100vh;
+}
+
+#list {
+	position: fixed;
+	top: 0;
+	left: -15vw;
+	width: 15vw;
+	height: 100vh;
+	z-index: 1001;
+	background-color: white;
+	padding: 0.5rem;
+
+	transition: left 0.25s;
+}
+
+#list.showList {
+	left: 0;
+}
+
+#list > div {
+	position: relative;
+	top: 0;
+	width: 100%;
+}
+
+#list > div > h4 {
+	margin-top: 0.665rem;
+}
+
+#filters {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	z-index: 1001;
+}
+
+.faIcon {
+	text-align: center;
+	line-height: 20px;
+}

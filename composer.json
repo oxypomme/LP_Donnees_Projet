@@ -1,8 +1,13 @@
 {
-    "name": "sublett/lp_donnees_projet",
-    "type": "project",
-    "require": {
-        "mongodb/mongodb": "^1.10",
-        "vlucas/phpdotenv": "^5.4"
-    }
+	"name": "sublett/lp_donnees_projet",
+	"type": "project",
+	"require": {
+		"mongodb/mongodb": "^1.10",
+		"vlucas/phpdotenv": "^5.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Nancy\\": "php/"
+		}
+	}
 }
