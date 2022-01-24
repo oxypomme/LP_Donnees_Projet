@@ -48,7 +48,27 @@ const map = L.map("map", {
 	const list = document.getElementById("list");
 	for (const [groupName, group] of Object.entries(overlays)) {
 		const markers = [];
-		for (const { name, address, description, geometry, category } of group) {
+		for (const {
+			name,
+			address,
+			description,
+			geometry,
+			category,
+			...data
+		} of group) {
+			let dataHTML = "";
+
+			switch (category.name) {
+				case "parking":
+					dataHTML = `
+					Places libres: ${data.places}<br/>
+					Capacité: ${data.capacity}`;
+					break;
+
+				default:
+					break;
+			}
+
 			markers.push(
 				// Rendering marker
 				L.marker([geometry.y, geometry.x], {
@@ -63,7 +83,7 @@ const map = L.map("map", {
           <hr />
           ${description}
           <hr />
-          Custom data</div>`;
+					${dataHTML}</div>`;
 				})
 			);
 		}
