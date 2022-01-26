@@ -1,5 +1,7 @@
 # Nancy PI
 
+<https://github.com/oxypomme/LP_Donnees_Projet>
+
 ## Développement
 
 ```sh
@@ -7,6 +9,7 @@
 docker-compose up -d
 
 # Pour installer les dépendances PHP
+# NOTE: le dossier `vendor` est déjà contenu dans l'archive zip
 composer install
 # Ou (si une erreur se produit)
 docker exec -it lp_donnees_projet_php_1 sh ./composer.sh
